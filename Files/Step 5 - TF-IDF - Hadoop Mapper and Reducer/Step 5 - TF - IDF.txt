@@ -1,14 +1,17 @@
 # Create a table where top 10 users first to iterate
 
 CREATE TABLE top_ten_users AS SELECT owner_id,sum(score) AS sum_score FROM stackposts_cleaned WHERE owner_id IS NOT NULL GROUP BY  owner_id ORDER BY sum_score DESC LIMIT 10;
-
 # Dump top 10 users data 
 insert overwrite local directory '/home/sunny/top_ten_data' row format delimited fields terminated by ',' select owner_id, body,title from stackposts_cleaned where owner_id in (select owner_id from top_ten_users);
+
 
 # As test dataset contained spaces
 sed 's/,/ /g' 000000_0 > top_data
 
 hadoop fs -put /home/sunny/top_ten_data/top_data /tfidf_data
+
+
+********************************************************************************************************
 
 # Phase 1
 hadoop jar /home/sunny/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar -file   /home/sunny/TFIDF/MapperPhaseOne.py /home/sunny/TFIDF/ReducerPhaseOne.py -mapper "python MapperPhaseOne.py" -reducer "python ReducerPhaseOne.py" -input /tfidf_data/top_data -output /phase_1;
@@ -22,13 +25,15 @@ hadoop jar /home/sunny/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar 
 
 hadoop fs -getmerge /phase_3/part-00000 /home/sunny/TFIDF/TFIDF_OUTPUT.csv;
 
+
 sed -e 's/\s/,/g' /home/sunny/TFIDF/TFIDF_OUTPUT.csv > TFIDF_OUTPUT_FINAl.csv
+
+********************************************************************************************************
 
 # Create Table
 CREATE TABLE tfidf(words string,owner_id string,tfidf_value float) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 
 LOAD DATA LOCAL INPATH '/home/sunny/TFIDF_OUTPUT_FINAl.csv' INTO TABLE tfidf;
-
 
 # Partition
 SELECT * FROM (SELECT ROW_NUMBER() OVER(PARTITION BY owner_id ORDER BY tfidf_value DESC) AS rating, * FROM tfidf) r WHERE rating IN (1,2,3,4,5,6,7,8,9,10);
