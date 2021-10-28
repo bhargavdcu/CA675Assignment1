@@ -1,0 +1,34 @@
+#Creating a new table
+ 
+CREATE TABLE stackposts_cleaned
+(
+post_id int,
+post_type int, 
+acc_ans_id int,
+parent_id int,
+cre_date timestamp,
+del_date timestamp,
+score int,
+view_count int,
+body string,
+owner_id int,
+owner_name string,
+ls_edi_user_id int,
+ls_edi_disname string,
+last_edit_date timestamp,
+last_act_date timestamp,
+title string,
+tags string,
+ans_count int,
+comment_count int,
+fav_count int,
+clo_date timestamp,
+comm_own_date timestamp,
+content_license string,
+dis_name string
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
+
+# Load CSV Into Table
+LOAD DATA INPATH 'home/sunny/FQCleaned1.csv' INTO TABLE stackposts_cleaned
+LOAD DATA INPATH 'home/sunny/FQCleaned2.csv' INTO TABLE stackposts_cleaned

@@ -1,0 +1,24 @@
+#Put CSV File into HDFS
+
+hadoop fs -put /home/sunny/675_Submission/FQ_Stack.csv /
+
+
+# Load Into Pig
+postsdata = LOAD '/FQ_Stack.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',','YES_MULTILINE', 'NOCHANGE', 'SKIP_INPUT_HEADER') as (id :int,posttypeid :int,acceptedanswerid :int,parentid :int,creationdate :chararray,deletiondate :chararray,score :int,viewcount :int,body :chararray,owneruserid :int,ownerdisplayname :chararray,lasteditoruserid :int,lasteditordisplayname :chararray,lasteditdate  :chararray,lastactivitydate :chararray,title :chararray,tags :chararray,answercount:int,commentcount :int,favoritecount :int,closeddate :chararray,communityowneddate : chararray,contentlicense:chararray,displayname:chararray);
+
+# Replace Function
+postsdata_new = FOREACH postsdata GENERATE id AS id,posttypeid as posttypeid,acceptedanswerid as acceptedanswerid,parentid as parentid,creationdate as creationdate,deletiondate as deletiondate,score as score,viewcount as viewcount,REPLACE(body,'\n',''),',','') AS body,owneruserid as owneruserid,ownerdisplayname as ownerdisplayname,lasteditoruserid as lasteditoruserid,lasteditordisplayname as lasteditordisplayname,lasteditdate as lasteditdate,lastactivitydate as lastactivitydate,REPLACE(REPLACE(title,'\n',''),',','') AS title,tags as tags,answercount as answercount,commentcount as commentcount,favoritecount as favoritecount,closeddate as closeddate,communityowneddate as communityowneddate,contentlicense as contentlicense,displayname as displayname;
+
+# Store Out into HDFS
+STORE postsdata_new INTO ' hdfs://localhost:9000/FQ_Cleaned ' USING PigStorage (',');
+
+# Get From HDFS
+hadoop fs -get /FQ_Cleaned
+
+# Get from HDFS 
+mv FQ_Cleaned/part-m-00000 FQCleaned1.csv
+mv FQ_Cleaned/part-m-00001 FQCleaned2.csv
+
+
+
+

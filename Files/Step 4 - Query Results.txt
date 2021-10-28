@@ -1,0 +1,40 @@
+
+Query 2.2.1 - SELECT post_id,title,score FROM stackposts_cleaned SORT BY score DESC LIMIT 10
+
+****** Query 2.2.1 Result ******************
+
+11227809	Why is processing a sorted array faster than processing an unsorted array	25933
+927358	How do I undo the most recent local commits in Git	23348
+2003505	How do I delete a Git branch locally and remotely	18514
+292357	What is the difference between git pull and git fetch	12834
+231767	What does the yield keyword do	11551
+477816	What is the correct JSON content type	10921
+348170	How do I undo git add before commit	10079
+5767325	How can I remove a specific item from an array	9931
+6591213	How do I rename a local Git branch	9792
+1642028	What is the  operator in CC	9560
+Time taken: 107.172 seconds, Fetched: 10 row(s)
+
+
+Query 2.2.2 - SELECT owner_id,sum(score) AS sum_score FROM stackposts_cleaned WHERE owner_id IS NOT NULL GROUP BY owner_id ORDER BY sum_score DESC LIMIT 10;  
+
+****** Query 2.2.2 Result *********************
+87234	37672
+4883	28817
+9951	26878
+6068	25944
+89904	24024
+51816	23763
+49153	20203
+179736	19603
+95592	19479
+63051	19362
+Time taken: 98.107 seconds, Fetched: 10 row(s)
+
+
+Query 2.2.3 - SELECT COUNT(DISTINCT(owner_id)) FROM stackposts_cleaned WHERE lower(body) like '%cloud%' OR  lower(title) like '%cloud%' OR lower(tags) like '%cloud%';
+
+****** Query 2.2.3 Result *********************
+988
+Time taken: 50.013 seconds, Fetched: 1 row(s)
+
