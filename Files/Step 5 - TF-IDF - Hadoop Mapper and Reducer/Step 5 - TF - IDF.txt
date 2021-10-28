@@ -5,6 +5,7 @@ CREATE TABLE top_ten_users AS SELECT owner_id,sum(score) AS sum_score FROM stack
 # Dump top 10 users data 
 insert overwrite local directory '/home/sunny/top_ten_data' row format delimited fields terminated by ',' select owner_id, body,title from stackposts_cleaned where owner_id in (select owner_id from top_ten_users);
 
+# As test dataset contained spaces
 sed 's/,/ /g' 000000_0 > top_data
 
 hadoop fs -put /home/sunny/top_ten_data/top_data /tfidf_data
