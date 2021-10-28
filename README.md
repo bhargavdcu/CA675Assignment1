@@ -2,7 +2,7 @@
 Assignment 1
 
 # Files Structure
- 1) CSV Files </br>
+ 1) CSV Files and Python Files </br>
     Contains all CSV files obtained from query as well as cleaned files.Also contains python code used for cleaning
   
 2) Hadoop and Pig Code </br>
