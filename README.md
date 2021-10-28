@@ -2,17 +2,23 @@
 Assignment 1
 
 # Files Structure
-1) CSV Files - Contains all CSV files obtained from query as well as cleaned files.Also contains python code used for cleaning
+# 1) CSV Files </br>
+    Contains all CSV files obtained from query as well as cleaned files.Also contains python code used for cleaning
   
-2) Hadoop and Pig Code - Contains Hadoop and Pig Code for replace function and loading-unloading from HDFS
+# 2) Hadoop and Pig Code </br>
+    Contains Hadoop and Pig Code for replace function and loading-unloading from HDFS
 
-3) Hive Code - Contains HQL code for table creation and loading of data into the table
+# 3) Hive Code </br> 
+    Contains HQL code for table creation and loading of data into the table
 
-4) Query Results - Contains code for queries and output from the respective queries
+# 4) Query Results </br>
+    Contains code for queries and output from the respective queries
 
-5) TFIDF - Contains Mapper-Reducer files and rest of the steps for obtaining TF-IDF. 
-
-   TF-IDF Reference: https://github.com/SatishUC15/TFIDF-HadoopMapReduce
+# 5) TFIDF </br> 
+   Contains Mapper-Reducer files and rest of the steps for obtaining TF-IDF </br> 
+   TF-IDF Reference: https://github.com/SatishUC15/TFIDF-HadoopMapReduce </br>
+   Description - https://monkeylearn.com/blog/what-is-tf-idf/ </br>
+   Query - https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-row_number-function/</br>
 
 6) Screenshots - Contains screenshots
 
