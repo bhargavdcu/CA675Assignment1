@@ -22,8 +22,6 @@ Assignment 1
 
 6) Screenshots - Contains screenshots
 
-# Snippet Example
-
 ```
 # Hive Create Table
 
