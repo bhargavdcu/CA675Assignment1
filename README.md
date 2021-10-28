@@ -2,19 +2,19 @@
 Assignment 1
 
 # Files Structure
-# 1) CSV Files </br>
+ 1) CSV Files </br>
     Contains all CSV files obtained from query as well as cleaned files.Also contains python code used for cleaning
   
-# 2) Hadoop and Pig Code </br>
+2) Hadoop and Pig Code </br>
     Contains Hadoop and Pig Code for replace function and loading-unloading from HDFS
 
-# 3) Hive Code </br> 
+3) Hive Code </br> 
     Contains HQL code for table creation and loading of data into the table
 
-# 4) Query Results </br>
+4) Query Results </br>
     Contains code for queries and output from the respective queries
 
-# 5) TFIDF </br> 
+5) TF-IDF </br> 
    Contains Mapper-Reducer files and rest of the steps for obtaining TF-IDF </br> 
    TF-IDF Reference: https://github.com/SatishUC15/TFIDF-HadoopMapReduce </br>
    Description - https://monkeylearn.com/blog/what-is-tf-idf/ </br>
