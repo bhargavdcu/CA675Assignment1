@@ -1,8 +1,3 @@
-2021-10-31 12:50:23,415 Stage-1 map = 0%,  reduce = 0%
-2021-10-31 12:50:37,559 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.43 sec
-2021-10-31 12:50:52,661 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 8.01 sec
-MapReduce Total cumulative CPU time: 8 seconds 10 msec
-Ended Job = job_1635389442972_0012
 MapReduce Jobs Launched: 
 Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 8.01 sec   HDFS Read: 272033 HDFS Write: 3744 SUCCESS
 Total MapReduce CPU Time Spent: 8 seconds 10 msec
