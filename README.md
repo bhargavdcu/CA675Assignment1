@@ -1,4 +1,4 @@
-# CA675Assignment1
+# CA675 Assignment 1
 Assignment 1
 
 # Files Structure
@@ -20,7 +20,10 @@ Assignment 1
    Description - https://monkeylearn.com/blog/what-is-tf-idf/ </br>
    Query - https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-row_number-function/</br>
 
-6) Screenshots - Contains screenshots
+6) Screenshots - Contains screenshots of steps
+
+
+
 
 ```
 # Hive Create Table
