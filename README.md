@@ -18,7 +18,7 @@ Assignment 1
    Contains Mapper-Reducer files and rest of the steps for obtaining TF-IDF </br> 
    TF-IDF Reference: https://github.com/SatishUC15/TFIDF-HadoopMapReduce </br>
    Description - https://monkeylearn.com/blog/what-is-tf-idf/ </br>
-   Query - https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-row_number-function/</br>
+   Query - https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-row_number-function/</br></br>
 
 6) Screenshots - Contains screenshots of steps
 
