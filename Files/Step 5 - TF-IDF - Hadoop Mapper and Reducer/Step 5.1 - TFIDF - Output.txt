@@ -1,3 +1,5 @@
+#TFIDF - Output
+
 MapReduce Jobs Launched: 
 Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 8.01 sec   HDFS Read: 272033 HDFS Write: 3744 SUCCESS
 Total MapReduce CPU Time Spent: 8 seconds 10 msec
